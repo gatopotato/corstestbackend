@@ -21,13 +21,7 @@ app.post('/login', (req, res) => {
     res.setHeader('Access-Control-Allow-Credentials', true);
     } );
 
-app.options("/*", (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE,OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.send();
-    });
+app.options("/*",cors());
 
 app.listen(port, () => {
     console.log('Server is running on port '+ port);
