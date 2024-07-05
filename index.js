@@ -4,10 +4,7 @@ import "dotenv/config";
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(cors({
-    origin:"*",
-    methods: "GET, POST, PUT, DELETE,OPTIONS",
-    allowedHeaders: "Content-Type",
-    credentials: true
+    origin:true
 }));
 
 app.get('/', (req, res) => {
@@ -21,7 +18,7 @@ app.post('/login', (req, res) => {
     res.setHeader('Access-Control-Allow-Credentials', true);
     } );
 
-app.options("/*",cors());
+app.options("*",cors());
 
 app.listen(port, () => {
     console.log('Server is running on port '+ port);
