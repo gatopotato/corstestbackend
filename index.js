@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     });
 app.post('/login', (req, res) => {
     res.json({ message: 'Login Success!' });
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
     } );
 
 app.options("/*", (req, res) => {
